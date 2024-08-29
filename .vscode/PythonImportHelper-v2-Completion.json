@@ -1,0 +1,147 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "hello",
+        "kind": 2,
+        "importPath": "Flask_API.app",
+        "description": "Flask_API.app",
+        "peekOfCode": "def hello():\n    return render_template('index.html')\nif __name__==\"__main__\":\n    app.run(debug=True)",
+        "detail": "Flask_API.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "Flask_API.app",
+        "description": "Flask_API.app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef hello():\n    return render_template('index.html')\nif __name__==\"__main__\":\n    app.run(debug=True)",
+        "detail": "Flask_API.app",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "Flask_API_artefacts.app",
+        "description": "Flask_API_artefacts.app",
+        "peekOfCode": "def home():\n    return render_template('home.html')\n@app.route('/predict_api',methods=['POST'])\ndef predict_api():\n    data=request.json['data']\n    print(data)\n    print(np.array(list(data.values())).reshape(1,-1))\n    new_data=scalar.transform(np.array(list(data.values())).reshape(1,-1))\n    output=regmodel.predict(new_data)\n    print(output[0])",
+        "detail": "Flask_API_artefacts.app",
+        "documentation": {}
+    },
+    {
+        "label": "predict_api",
+        "kind": 2,
+        "importPath": "Flask_API_artefacts.app",
+        "description": "Flask_API_artefacts.app",
+        "peekOfCode": "def predict_api():\n    data=request.json['data']\n    print(data)\n    print(np.array(list(data.values())).reshape(1,-1))\n    new_data=scalar.transform(np.array(list(data.values())).reshape(1,-1))\n    output=regmodel.predict(new_data)\n    print(output[0])\n    return jsonify(output[0])\n@app.route('/predict',methods=['POST'])\ndef predict():",
+        "detail": "Flask_API_artefacts.app",
+        "documentation": {}
+    },
+    {
+        "label": "predict",
+        "kind": 2,
+        "importPath": "Flask_API_artefacts.app",
+        "description": "Flask_API_artefacts.app",
+        "peekOfCode": "def predict():\n    data=[float(x) for x in request.form.values()]\n    final_input=scalar.transform(np.array(data).reshape(1,-1))\n    print(final_input)\n    output=regmodel.predict(final_input)[0]\n    return render_template(\"home.html\",prediction_text=\"The House price prediction is {}\".format(output))\nif __name__==\"__main__\":\n    app.run(debug=True)",
+        "detail": "Flask_API_artefacts.app",
+        "documentation": {}
+    }
+]
